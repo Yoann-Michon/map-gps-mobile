@@ -103,17 +103,13 @@ export default function TabTwoScreen() {
           <TouchableOpacity
           key={index}
           onPress={() => {
-            if(location){
-              const newCoords = {
-                ...location.coords,
-                latitude: item.coordinates[1],
-                longitude: item.coordinates[0]
-              }
               setLocation({
                 ...location,
-                coords: newCoords
+                coords: {
+                  latitude: item.coordinates[1],
+                  longitude: item.coordinates[0]
+                }
               });
-            }
           }}
           
           >
